@@ -102,7 +102,7 @@ int menu() {
   }
 }
 
-static void help() {
+void help() {
   system("cls");
   GotoXY(40, 12);
   printf("W - Up");
@@ -122,7 +122,7 @@ static void help() {
   system("cls");
 }
 
-static void about() {
+void about() {
   system("cls");
   GotoXY(30, 12);
   printf("Hangzhou Dianzi University");

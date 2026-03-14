@@ -7,7 +7,7 @@ extern char nowDir;
 void PrintSnake() {
   for (auto [x, y] : s.snakePlace) {
     GotoXY(x, y);
-    auto head = s.getHead()->getData().getData();
+    auto head = s.getHead()->getData();
     if (head == (std::pair<int, int>){x, y}) {
       switch (nowDir) {
       case 'w':

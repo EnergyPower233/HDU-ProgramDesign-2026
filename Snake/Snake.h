@@ -119,3 +119,5 @@ void createFood();
 void gameOver();
 void Hide();
 void GotoXY(int,int);
+void help();
+void about();
