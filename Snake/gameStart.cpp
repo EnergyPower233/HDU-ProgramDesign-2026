@@ -36,8 +36,6 @@ void begin() {
                 ++score;
                 s.getFood(FOOD(x,y));
                 foodPlace.erase({x,y});
-                GotoXY(x,y);
-                printf(" ");
                 createFood();
                 break;
         }
@@ -50,3 +48,4 @@ int check(int x,int y) {
     if(x<0||y<0||x>=MAX_HEIGHT||y>=MAX_WIDTH) return 0;
     return 1;
 }
+//1
