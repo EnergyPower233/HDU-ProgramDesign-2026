@@ -8,10 +8,10 @@ std::mt19937 rnd(time(nullptr));
 char nowDir;
 std::map<char,std::pair<int,int>> mp;
 void begin() {
-    mp['w']={1,0};
-    mp['a']={0,-1};
-    mp['s']={-1,0};
-    mp['d']={0,1};
+    mp['d']={1,0};
+    mp['w']={0,-1};
+    mp['a']={-1,0};
+    mp['s']={0,1};
     while(1) {
         Sleep(s.getSpeed());
         if(_kbhit()) {
@@ -35,6 +35,7 @@ void begin() {
             case 3:
                 ++score;
                 s.getFood(FOOD(x,y));
+                foodPlace.erase({x,y});
                 createFood();
                 break;
         }

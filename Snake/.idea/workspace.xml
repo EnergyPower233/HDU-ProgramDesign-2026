@@ -30,8 +30,6 @@
   <component name="ChangeListManager">
     <list default="true" id="54dc63e5-50e2-4c47-97c0-1497c332472f" name="更改" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Initialization.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Initialization.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Snake.h" beforeDir="false" afterPath="$PROJECT_DIR$/Snake.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gameGenerate.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/gameGenerate.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gameStart.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/gameStart.cpp" afterDir="false" />
     </list>
@@ -90,6 +88,11 @@
 }]]></component>
   <component name="RunManager">
     <configuration name="Snake" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Snake" TARGET_NAME="Snake" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Snake" RUN_TARGET_NAME="Snake">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>

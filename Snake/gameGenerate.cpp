@@ -53,8 +53,17 @@ void PrintBoader() {
   GotoXY(50, 5);
   printf("Score: %d",score);
 }
+void printBlank() {
+  for (int i = 0; i < MAX_HEIGHT; ++i)
+    for (int j = 0; j < MAX_WIDTH; ++j)
+    {
+      GotoXY(i, j);
+      printf(" ");
+    }
 
+}
 void print() {
+    printBlank();
     PrintBoader();
     PrintSnake();
     PrintFood();
