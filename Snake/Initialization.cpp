@@ -3,6 +3,7 @@ extern SNAKE s;
 extern std::set<std::pair<int, int>> foodPlace;
 extern std::mt19937 rnd;
 extern char nowDir;
+extern int score;
 
 void createFood() {
   int cnt = rnd() % s.nullPlace.size();
@@ -32,7 +33,9 @@ void init() {
   foodPlace.clear();
 
   Hide();
-  s.clear();
+  // std::cout<<'a'<<std::endl;
+  // Sleep(20000);
+  s.clear(); score=0;
   for (int i = 0; i < MAX_HEIGHT; ++i)
     for (int j = 0; j < MAX_WIDTH; ++j)
       s.nullPlace.insert({i, j});

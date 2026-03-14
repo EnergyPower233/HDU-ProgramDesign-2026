@@ -28,7 +28,13 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="54dc63e5-50e2-4c47-97c0-1497c332472f" name="更改" comment="" />
+    <list default="true" id="54dc63e5-50e2-4c47-97c0-1497c332472f" name="更改" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Initialization.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Initialization.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Snake.h" beforeDir="false" afterPath="$PROJECT_DIR$/Snake.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gameGenerate.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/gameGenerate.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gameStart.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/gameStart.cpp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,7 +65,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "CMake Application.Snake.executor": "Run",
+    "CMake Application.Snake.executor": "Debug",
     "CMake 应用程序.Snake.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.RadMigrateCodeStyle": "true",
@@ -78,7 +84,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "CMakeSettings",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>

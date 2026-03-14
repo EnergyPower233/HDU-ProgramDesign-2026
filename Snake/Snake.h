@@ -51,6 +51,7 @@ class SNAKE:public std::enable_shared_from_this<snake> {
             size=0,speed=1000;
             snakePlace.clear();
             nullPlace.clear();
+            if (!head) return;
             auto tmp=head->getNxt();
             while(tmp!=head) {
                 auto temp=tmp->getNxt();

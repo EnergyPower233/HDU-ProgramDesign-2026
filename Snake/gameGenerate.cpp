@@ -6,19 +6,23 @@ extern char nowDir;
 extern int score;
 
 void PrintSnake() {
+  auto head = s.getHead()->getData();
   for (auto [x, y] : s.snakePlace) {
     GotoXY(x, y);
-    auto head = s.getHead()->getData();
-    if (head == (std::pair<int, int>){x, y}) {
+    if (head.first==x&&head.second==y) {
       switch (nowDir) {
       case 'w':
         printf("^");
+        break;
       case 'a':
         printf("<");
+        break;
       case 's':
         printf("v");
+        break;
       case 'd':
         printf(">");
+        break;
       }
     } else {
       printf("o");
