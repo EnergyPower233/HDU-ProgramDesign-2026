@@ -37,12 +37,13 @@ class snake:public std::enable_shared_from_this<snake> {
         void setNxt(std::shared_ptr<snake> next){ nxt=next; }
         void setPre(std::shared_ptr<snake> prev){ pre=prev; }
 };
-class SNAKE {
+class SNAKE:public std::enable_shared_from_this<snake> {
     private:
         std::shared_ptr<snake> head,tail;
         int size,speed;
     public:
         SNAKE():size(0),speed(1000),head(nullptr),tail(nullptr){}
+        std::shared_ptr<snake> getHead()const{ return head; }
         int getSpeed()const{ return speed; }
         void setSpeed(int x){ speed=x; }
         void pushBack(int x,int y) {
