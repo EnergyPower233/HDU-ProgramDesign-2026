@@ -3,7 +3,7 @@
 #include <conio.h>
 #include <stdio.h>
 
-static void GotoXY(int x, int y) {
+void GotoXY(int x, int y) {
   HANDLE hout;
   COORD cor;
   hout = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -12,7 +12,7 @@ static void GotoXY(int x, int y) {
   SetConsoleCursorPosition(hout, cor);
 }
 
-static void Hide() {
+void Hide() {
   HANDLE hout = GetStdHandle(STD_OUTPUT_HANDLE);
   CONSOLE_CURSOR_INFO cor_info = {1, 0};
   SetConsoleCursorInfo(hout, &cor_info);
@@ -122,7 +122,7 @@ static void help() {
   system("cls");
 }
 
-void about() {
+static void about() {
   system("cls");
   GotoXY(30, 12);
   printf("Hangzhou Dianzi University");

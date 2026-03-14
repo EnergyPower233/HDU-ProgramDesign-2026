@@ -110,14 +110,12 @@ class SNAKE:public std::enable_shared_from_this<snake> {
         }
 };
 int menu();
-void GotoXY(int,int);
-void Hide();
-void help();
 void init();
 void print();
 int check(int,int);
 void begin();
-void about();
 void main_loop();
 void createFood();
 void gameOver();
+void Hide();
+void GotoXY(int,int);
