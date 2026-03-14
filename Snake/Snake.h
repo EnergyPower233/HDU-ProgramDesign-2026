@@ -97,8 +97,8 @@ class SNAKE {
         }
 };
 int menu();
-void gotoDes(int,int);
-void hide();
+void GotoXY(int,int);
+void Hide();
 void help();
 void init();
 void print();
