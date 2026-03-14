@@ -157,29 +157,83 @@ void main_loop() {
 }
 
 extern SNAKE s;
-extern std::set<std::pair<int,int>> snakePlace,foodPlace,nullPlace;
+extern std::set<std::pair<int, int>> snakePlace, foodPlace, nullPlace;
 extern std::mt19937 rnd;
 extern char nowDir;
 
-FOOD createFood() {
-    int cnt=rnd()%nullPlace.size();
-    auto tmp=nullPlace.begin();
-    while(cnt) {
-        ++tmp;
-        --cnt;
-    }
-    foodPlace.insert(*tmp);
-    nullPlace.erase(tmp);
-    return FOOD((*tmp).first,(*tmp).second);
+void createFood() {
+  int cnt = rnd() % nullPlace.size();
+  auto tmp = nullPlace.begin();
+  while (cnt) {
+    ++tmp;
+    --cnt;
+  }
+  foodPlace.insert(*tmp);
+  auto [x, y] = *tmp;
+  nullPlace.erase(tmp);
+  GotoXY(x, y);
+  printf("*");
 }
 
-void init() {
-    for(int i=0;i<MAX_HEIGHT;++i)
-        for(int j=0;j<MAX_WIDTH;++j)
-            nullPlace.insert({i,j});
-    //在地图中间生成蛇头，并随机一个方向
+void initializeSnake() {}
 
-    //随机生成食物
-    
-    //print()，方法为遍历三个 set，根据对应属性输出，for(auto [x,y]:setname)
+void PrintSnake() {
+  for (auto [x, y] : snakePlace) {
+    GotoXY(x, y);
+    auto head = s.getHead()->getData().getData();
+    if (head == (std::pair<int, int>){x, y}) {
+      switch (nowDir) {
+      case 'w':
+        printf("^");
+      case 'a':
+        printf("<");
+      case 's':
+        printf("v");
+      case 'd':
+        printf(">");
+      }
+    } else {
+      printf("o");
+    }
+  }
+}
+
+void PrintFood() {
+  for (auto [x, y] : foodPlace) {
+    GotoXY(x, y);
+    printf("*");
+  }
+}
+
+void PrintBoader() {
+  for (int i = 0; i < MAX_WIDTH; i++) {
+    GotoXY(i, 0);
+    printf("-");
+    GotoXY(i, MAX_HEIGHT - 1);
+    printf("-");
+  }
+  for (int i = 1; i < MAX_HEIGHT - 1; i++) {
+    GotoXY(0, i);
+    printf("|");
+    GotoXY(MAX_WIDTH - 1, i);
+    printf("|");
+  }
+  GotoXY(50, 5);
+  printf("Score: 0");
+}
+
+// Initialization
+void init() {
+  system("cls");
+  Hide();
+  for (int i = 0; i < MAX_HEIGHT; ++i)
+    for (int j = 0; j < MAX_WIDTH; ++j)
+      nullPlace.insert({i, j});
+
+  // 在地图中间生成蛇头，并随机一个方向
+  initializeSnake();
+  // 随机生成食物
+  createFood();
+
+  PrintBoader();
 }
