@@ -18,12 +18,16 @@ void createFood() {
 }
 
 static void initializeSnake() {
-    s.pushBack(MAX_HEIGHT/2,MAX_WIDTH/2);
-    int tmp=rnd()%4;
-    if(tmp==0) nowDir='w';
-    if(tmp==1) nowDir='a';
-    if(tmp==2) nowDir='s';
-    if(tmp==3) nowDir='d';
+  s.pushBack(MAX_HEIGHT / 2, MAX_WIDTH / 2);
+  int tmp = rnd() % 4;
+  if (tmp == 0)
+    nowDir = 'w';
+  if (tmp == 1)
+    nowDir = 'a';
+  if (tmp == 2)
+    nowDir = 's';
+  if (tmp == 3)
+    nowDir = 'd';
 }
 
 extern void PrintBoader();
@@ -35,7 +39,8 @@ void init() {
   Hide();
   // std::cout<<'a'<<std::endl;
   // Sleep(20000);
-  s.clear(); score=0;
+  s.clear();
+  score = 0;
   for (int i = 0; i < MAX_HEIGHT; ++i)
     for (int j = 0; j < MAX_WIDTH; ++j)
       s.nullPlace.insert({i, j});

@@ -2,6 +2,7 @@
 #include <cassert>
 void main_loop() {
   while (true) {
+    printBlank();
     int result = menu();
     switch (result) {
     case 1:
