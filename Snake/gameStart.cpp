@@ -8,12 +8,12 @@ std::mt19937 rnd(time(nullptr));
 char nowDir;
 std::map<char,std::pair<int,int>> mp;
 void begin() {
-    Sleep(s.getSpeed());
     mp['w']={1,0};
     mp['a']={0,-1};
     mp['s']={-1,0};
     mp['d']={0,1};
     while(1) {
+        Sleep(s.getSpeed());
         if(_kbhit()) {
             char c=_getch();
             if(c=='w'||c=='a'||c=='s'||c=='d')

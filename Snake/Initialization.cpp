@@ -30,6 +30,7 @@ extern void PrintBoader();
 void init() {
   system("cls");
   Hide();
+  s.clear();
   for (int i = 0; i < MAX_HEIGHT; ++i)
     for (int j = 0; j < MAX_WIDTH; ++j)
       s.nullPlace.insert({i, j});
