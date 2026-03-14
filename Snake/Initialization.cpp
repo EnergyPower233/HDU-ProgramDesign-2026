@@ -3,7 +3,7 @@ extern SNAKE s;
 extern std::set<std::pair<int, int>> foodPlace;
 extern std::mt19937 rnd;
 
-static void createFood() {
+void createFood() {
   int cnt = rnd() % s.nullPlace.size();
   auto tmp = s.nullPlace.begin();
   while (cnt) {
