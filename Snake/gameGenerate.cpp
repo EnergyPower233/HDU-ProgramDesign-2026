@@ -50,7 +50,7 @@ void PrintBoader() {
   printf("Score: %d",score);
 }
 
-void pirnt() {
+void print() {
     PrintBoader();
     PrintSnake();
     PrintFood();
