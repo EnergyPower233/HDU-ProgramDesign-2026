@@ -18,7 +18,7 @@ void begin() {
             if(c=='w'||c=='a'||c=='s'||c=='d')
                 nowDir=c,print();
         }
-        auto [x,y]=s.getHead()->getData().getData();
+        auto [x,y]=s.getHead()->getData();
         auto [dx,dy]=mp[nowDir];
         x+=dx,y+=dy;
         switch(check(x,y)) {
