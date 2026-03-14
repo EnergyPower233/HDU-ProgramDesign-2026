@@ -25,7 +25,7 @@ void begin() {
         switch(check(x,y)) {
             case 0:
                 gameOver();
-                break;
+                return;
             case 1:
                 s.moveSnake(x,y);
                 break;
