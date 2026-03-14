@@ -155,3 +155,31 @@ void main_loop() {
     }
   }
 }
+
+extern SNAKE s;
+extern std::set<std::pair<int,int>> snakePlace,foodPlace,nullPlace;
+extern std::mt19937 rnd;
+extern char nowDir;
+
+FOOD createFood() {
+    int cnt=rnd()%nullPlace.size();
+    auto tmp=nullPlace.begin();
+    while(cnt) {
+        ++tmp;
+        --cnt;
+    }
+    foodPlace.insert(*tmp);
+    nullPlace.erase(tmp);
+    return FOOD((*tmp).first,(*tmp).second);
+}
+
+void init() {
+    for(int i=0;i<MAX_HEIGHT;++i)
+        for(int j=0;j<MAX_WIDTH;++j)
+            nullPlace.insert({i,j});
+    //在地图中间生成蛇头，并随机一个方向
+
+    //随机生成食物
+    
+    //print()，方法为遍历三个 set，根据对应属性输出，for(auto [x,y]:setname)
+}
