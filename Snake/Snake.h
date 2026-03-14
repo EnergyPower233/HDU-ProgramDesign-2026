@@ -42,8 +42,10 @@ class SNAKE:public std::enable_shared_from_this<snake> {
         std::shared_ptr<snake> head,tail;
         int size,speed;
     public:
+        std::set<std::pair<int,int>> snakePlace,nullPlace;
         SNAKE():size(0),speed(1000),head(nullptr),tail(nullptr){}
         std::shared_ptr<snake> getHead()const{ return head; }
+        std::shared_ptr<snake> getTail()const{ return tail; }
         int getSpeed()const{ return speed; }
         void setSpeed(int x){ speed=x; }
         void pushBack(int x,int y) {
@@ -103,7 +105,7 @@ void Hide();
 void help();
 void init();
 void print();
-int check();
+int check(int,int);
 void begin();
 void about();
 void main_loop();

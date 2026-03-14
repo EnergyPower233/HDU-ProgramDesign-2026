@@ -157,20 +157,20 @@ void main_loop() {
 }
 
 extern SNAKE s;
-extern std::set<std::pair<int, int>> snakePlace, foodPlace, nullPlace;
+extern std::set<std::pair<int, int>> foodPlace;
 extern std::mt19937 rnd;
 extern char nowDir;
 
 void createFood() {
-  int cnt = rnd() % nullPlace.size();
-  auto tmp = nullPlace.begin();
+  int cnt = rnd() % s.nullPlace.size();
+  auto tmp = s.nullPlace.begin();
   while (cnt) {
     ++tmp;
     --cnt;
   }
   foodPlace.insert(*tmp);
   auto [x, y] = *tmp;
-  nullPlace.erase(tmp);
+  s.nullPlace.erase(tmp);
   GotoXY(x, y);
   printf("*");
 }
@@ -178,7 +178,7 @@ void createFood() {
 void initializeSnake() {}
 
 void PrintSnake() {
-  for (auto [x, y] : snakePlace) {
+  for (auto [x, y] : s.snakePlace) {
     GotoXY(x, y);
     auto head = s.getHead()->getData().getData();
     if (head == (std::pair<int, int>){x, y}) {
@@ -228,7 +228,7 @@ void init() {
   Hide();
   for (int i = 0; i < MAX_HEIGHT; ++i)
     for (int j = 0; j < MAX_WIDTH; ++j)
-      nullPlace.insert({i, j});
+      s.nullPlace.insert({i, j});
 
   // 在地图中间生成蛇头，并随机一个方向
   initializeSnake();
