@@ -3,6 +3,7 @@ extern SNAKE s;
 extern std::set<std::pair<int, int>> foodPlace;
 extern std::mt19937 rnd;
 extern char nowDir;
+extern int score;
 
 void PrintSnake() {
   for (auto [x, y] : s.snakePlace) {
@@ -46,5 +47,11 @@ void PrintBoader() {
     printf("|");
   }
   GotoXY(50, 5);
-  printf("Score: 0");
+  printf("Score: %d",score);
+}
+
+void pirnt() {
+    PrintBoader();
+    PrintSnake();
+    PrintFood();
 }

@@ -2,6 +2,7 @@
 extern SNAKE s;
 extern std::set<std::pair<int, int>> foodPlace;
 extern std::mt19937 rnd;
+extern char nowDir;
 
 void createFood() {
   int cnt = rnd() % s.nullPlace.size();
@@ -13,11 +14,16 @@ void createFood() {
   foodPlace.insert(*tmp);
   auto [x, y] = *tmp;
   s.nullPlace.erase(tmp);
-  GotoXY(x, y);
-  printf("*");
 }
 
-static void initializeSnake() {}
+static void initializeSnake() {
+    s.pushBack(MAX_HEIGHT/2,MAX_WIDTH/2);
+    int tmp=rnd()%4;
+    if(tmp==0) nowDir='w';
+    if(tmp==1) nowDir='a';
+    if(tmp==2) nowDir='s';
+    if(tmp==3) nowDir='d';
+}
 
 extern void PrintBoader();
 // Initialization
@@ -33,5 +39,5 @@ void init() {
   // 随机生成食物
   createFood();
 
-  PrintBoader();
+  print();
 }
