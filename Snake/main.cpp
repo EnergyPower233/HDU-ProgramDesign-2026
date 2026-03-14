@@ -1,4 +1,5 @@
 #include "Snake.h"
+#include <cassert>
 void main_loop() {
   while (true) {
     int result = menu();
@@ -13,8 +14,8 @@ void main_loop() {
     case 3:
       about();
       break;
-    case 4:
-      return;
+    case 0:
+      assert(0);
     }
   }
 }
