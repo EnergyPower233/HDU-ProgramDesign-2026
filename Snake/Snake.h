@@ -17,9 +17,10 @@ using node=NODE;
 class snake {
     private:
         NODE x;
-        std::unique_ptr<snake> nxt,frm;
+        std::shared_ptr<snake> nxt;
+        std::weak_ptr<snake> frm;
     public:
-        snake(NODE xVal,auto NXT,auto FRM):x(xVal),nxt(NXT),frm(FRM){}
+        snake(NODE xVal,std::shared_ptr<snake> NXT,std::weak_ptr<snake> FRM):x(xVal),nxt(std::move(NXT)),frm(std::move(FRM)){}
         ~snake(){}
 };
 struct SNAKE {
