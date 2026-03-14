@@ -88,6 +88,11 @@ class SNAKE {
                 tmp=temp;
             }
         }
+        void getFood(FOOD food) {
+            auto [x,y]=food.getData();
+            pushBack(x,y);
+            rotate();
+        }
 };
 void menu();
 void gotoDes(int,int);
