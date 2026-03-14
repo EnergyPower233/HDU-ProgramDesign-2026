@@ -67,7 +67,7 @@ static char Up(char &selection) {
   return selection = next_selection + '0';
 }
 
-int Menu() {
+int menu() {
   char selection = '1';
   Select(selection);
   while (true) {
@@ -102,7 +102,7 @@ int Menu() {
   }
 }
 
-static void Help() {
+static void help() {
   system("cls");
   GotoXY(40, 12);
   printf("W - Up");
@@ -122,7 +122,7 @@ static void Help() {
   system("cls");
 }
 
-void About() {
+void about() {
   system("cls");
   GotoXY(30, 12);
   printf("Hangzhou Dianzi University");
@@ -134,106 +134,4 @@ void About() {
 
   char ch = _getch();
   system("cls");
-}
-
-void main_loop() {
-  while (true) {
-    int result = Menu();
-    switch (result) {
-    case 1:
-      init();
-      begin();
-      break;
-    case 2:
-      Help();
-      break;
-    case 3:
-      About();
-      break;
-    case 4:
-      exit(0);
-    }
-  }
-}
-
-extern SNAKE s;
-extern std::set<std::pair<int, int>> foodPlace;
-extern std::mt19937 rnd;
-extern char nowDir;
-
-void createFood() {
-  int cnt = rnd() % s.nullPlace.size();
-  auto tmp = s.nullPlace.begin();
-  while (cnt) {
-    ++tmp;
-    --cnt;
-  }
-  foodPlace.insert(*tmp);
-  auto [x, y] = *tmp;
-  s.nullPlace.erase(tmp);
-  GotoXY(x, y);
-  printf("*");
-}
-
-void initializeSnake() {}
-
-void PrintSnake() {
-  for (auto [x, y] : s.snakePlace) {
-    GotoXY(x, y);
-    auto head = s.getHead()->getData().getData();
-    if (head == (std::pair<int, int>){x, y}) {
-      switch (nowDir) {
-      case 'w':
-        printf("^");
-      case 'a':
-        printf("<");
-      case 's':
-        printf("v");
-      case 'd':
-        printf(">");
-      }
-    } else {
-      printf("o");
-    }
-  }
-}
-
-void PrintFood() {
-  for (auto [x, y] : foodPlace) {
-    GotoXY(x, y);
-    printf("*");
-  }
-}
-
-void PrintBoader() {
-  for (int i = 0; i < MAX_WIDTH; i++) {
-    GotoXY(i, 0);
-    printf("-");
-    GotoXY(i, MAX_HEIGHT - 1);
-    printf("-");
-  }
-  for (int i = 1; i < MAX_HEIGHT - 1; i++) {
-    GotoXY(0, i);
-    printf("|");
-    GotoXY(MAX_WIDTH - 1, i);
-    printf("|");
-  }
-  GotoXY(50, 5);
-  printf("Score: 0");
-}
-
-// Initialization
-void init() {
-  system("cls");
-  Hide();
-  for (int i = 0; i < MAX_HEIGHT; ++i)
-    for (int j = 0; j < MAX_WIDTH; ++j)
-      s.nullPlace.insert({i, j});
-
-  // 在地图中间生成蛇头，并随机一个方向
-  initializeSnake();
-  // 随机生成食物
-  createFood();
-
-  PrintBoader();
 }
