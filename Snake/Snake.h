@@ -1,9 +1,11 @@
 #include<iostream>
 #include<windows.h>
 #include<conio.h>
-#include<time.h>
+#include<ctime>
 #include<memory>
 #include<set>
+#include<random>
+#include<process.h>
 #define MAX_WIDTH 40
 #define MAX_HEIGHT 30
 class NODE {
@@ -94,10 +96,12 @@ class SNAKE {
             rotate();
         }
 };
-void menu();
+int menu();
 void gotoDes(int,int);
 void hide();
 void help();
 void init();
 void print();
 int check();
+void begin();
+void about();
