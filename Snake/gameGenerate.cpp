@@ -63,7 +63,6 @@ void printBlank() {
 
 }
 void print() {
-    printBlank();
     PrintBoader();
     PrintSnake();
     PrintFood();

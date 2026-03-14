@@ -37,6 +37,7 @@ class snake:public std::enable_shared_from_this<snake> {
         void setNxt(std::shared_ptr<snake> next){ nxt=next; }
         void setPre(std::shared_ptr<snake> prev){ pre=prev; }
 };
+void GotoXY(int,int);
 class SNAKE:public std::enable_shared_from_this<snake> {
     private:
         std::shared_ptr<snake> head,tail;
@@ -88,6 +89,9 @@ class SNAKE:public std::enable_shared_from_this<snake> {
         }
         void replaceHead(int x,int y) {
             if(head) {
+                auto [tx,ty]=head->getData();
+                GotoXY(tx,ty);
+                printf(" ");
                 nullPlace.insert(head->getData());
                 snakePlace.erase(head->getData());
                 head->setData(node(x,y));
@@ -134,6 +138,5 @@ void main_loop();
 void createFood();
 void gameOver();
 void Hide();
-void GotoXY(int,int);
 void help();
 void about();

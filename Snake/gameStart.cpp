@@ -36,6 +36,8 @@ void begin() {
                 ++score;
                 s.getFood(FOOD(x,y));
                 foodPlace.erase({x,y});
+                GotoXY(x,y);
+                printf(" ");
                 createFood();
                 break;
         }
