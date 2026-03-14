@@ -3,6 +3,7 @@
 #include<conio.h>
 #include<time.h>
 #include<memory>
+#include<set>
 #define MAX_WIDTH 40
 #define MAX_HEIGHT 30
 class NODE {
@@ -10,23 +11,88 @@ class NODE {
         int x,y;
     public:
         NODE(int xVal,int yVal):x(xVal),y(yVal){}
-        ~NODE(){}
+        std::pair<int,int> getData(){ return {x,y}; }
+        bool operator==(const NODE& a)const {
+            return a.x==x&&a.y==y;
+        }
+        bool operator!=(const NODE& a)const {
+            return !(*this==a);
+        }
 };
 using FOOD=NODE;
 using node=NODE;
-class snake {
+class snake:public std::enable_shared_from_this<snake> {
     private:
-        NODE x;
+        node x;
         std::shared_ptr<snake> nxt;
-        std::weak_ptr<snake> frm;
+        std::weak_ptr<snake> pre;
     public:
-        snake(NODE xVal,std::shared_ptr<snake> NXT,std::weak_ptr<snake> FRM):x(xVal),nxt(std::move(NXT)),frm(std::move(FRM)){}
-        ~snake(){}
+        snake(node xVal):x(xVal){}
+        node getData()const{ return x; }
+        void setData(node xVal){ x=xVal; }
+        std::shared_ptr<snake> getNxt()const{ return nxt; }
+        std::shared_ptr<snake> getPre()const{ return pre.lock(); }
+        void setNxt(std::shared_ptr<snake> next){ nxt=next; }
+        void setPre(std::shared_ptr<snake> prev){ pre=prev; }
 };
-struct SNAKE {
-    int *head,length;
-    SNAKE(){ head=nullptr; length=0; }
-    void init(int x,int y) {
-        
-    }
+class SNAKE {
+    private:
+        std::shared_ptr<snake> head,tail;
+        int size,speed;
+    public:
+        SNAKE():size(0),speed(1000),head(nullptr),tail(nullptr){}
+        int getSpeed()const{ return speed; }
+        void setSpeed(int x){ speed=x; }
+        void pushBack(int x,int y) {
+            auto newNode=std::make_shared<snake>(node(x,y));
+            if(!head) {
+                head=tail=newNode;
+                newNode->setNxt(newNode);
+                newNode->setPre(newNode);
+            } else {
+                newNode->setNxt(head);
+                newNode->setPre(tail);
+                tail->setNxt(newNode);
+                head->setPre(newNode);
+                tail=newNode;
+            }
+            ++size;
+        }
+        void rotate() {
+            if(!head||head==tail) return;
+            head=head->getPre();
+            tail=tail->getPre();
+        }
+        void replaceHead(int x,int y) {
+            if(head) head->setData(node(x,y));
+        }
+        void moveSnake(int x,int y) {
+            rotate();
+            replaceHead(x,y);
+        }
+        void cut(int x,int y) {
+            auto tmp=head;
+            int cnt=0;
+            while(tmp->getData()!=node(x,y)) {
+                tmp=tmp->getNxt();
+                ++cnt;
+            }
+            tail=tmp->getPre();
+            head->setPre(tail);
+            tail->setNxt(head);
+            size=cnt;
+            while(tmp!=head) {
+                auto temp=tmp->getNxt();
+                tmp->setNxt(nullptr);
+                tmp->setPre(nullptr);
+                tmp=temp;
+            }
+        }
 };
+void menu();
+void gotoDes(int,int);
+void hide();
+void help();
+void init();
+void print();
+int check();
