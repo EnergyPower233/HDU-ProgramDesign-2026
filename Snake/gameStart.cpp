@@ -8,6 +8,8 @@ std::mt19937 rnd(time(nullptr));
 char nowDir;
 std::map<char,std::pair<int,int>> mp;
 void begin() {
+    std::cout<<'a'<<std::endl;
+    Sleep(2000);
     mp['w']={1,0};
     mp['a']={0,-1};
     mp['s']={-1,0};
