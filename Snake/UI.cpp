@@ -135,3 +135,17 @@ void about() {
   char ch = _getch();
   system("cls");
 }
+
+void gameOver() {
+  system("cls");
+  GotoXY(30, 12);
+  printf("Game Over");
+  GotoXY(35, 14);
+  printf("Snake Game - Console Application");
+  GotoXY(43, 16);
+  printf("Press any key to return");
+  Hide();
+
+  char ch = _getch();
+  system("cls");
+}
