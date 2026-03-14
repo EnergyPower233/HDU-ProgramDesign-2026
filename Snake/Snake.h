@@ -13,7 +13,7 @@ class NODE {
         int x,y;
     public:
         NODE(int xVal,int yVal):x(xVal),y(yVal){}
-        std::pair<int,int> getData(){ return {x,y}; }
+        std::pair<int,int> getData()const{ return {x,y}; }
         bool operator==(const NODE& a)const {
             return a.x==x&&a.y==y;
         }
@@ -30,7 +30,7 @@ class snake:public std::enable_shared_from_this<snake> {
         std::weak_ptr<snake> pre;
     public:
         snake(node xVal):x(xVal){}
-        node getData()const{ return x; }
+        std::pair<int,int> getData()const{ return x.getData(); }
         void setData(node xVal){ x=xVal; }
         std::shared_ptr<snake> getNxt()const{ return nxt; }
         std::shared_ptr<snake> getPre()const{ return pre.lock(); }
@@ -49,6 +49,8 @@ class SNAKE:public std::enable_shared_from_this<snake> {
         int getSpeed()const{ return speed; }
         void setSpeed(int x){ speed=x; }
         void pushBack(int x,int y) {
+            nullPlace.erase({x,y});
+            snakePlace.insert({x,y});
             auto newNode=std::make_shared<snake>(node(x,y));
             if(!head) {
                 head=tail=newNode;
@@ -69,7 +71,13 @@ class SNAKE:public std::enable_shared_from_this<snake> {
             tail=tail->getPre();
         }
         void replaceHead(int x,int y) {
-            if(head) head->setData(node(x,y));
+            if(head) {
+                nullPlace.insert(head->getData());
+                snakePlace.erase(head->getData());
+                head->setData(node(x,y));
+                nullPlace.erase(head->getData());
+                snakePlace.insert(head->getData());
+            }
         }
         void moveSnake(int x,int y) {
             rotate();
@@ -78,7 +86,7 @@ class SNAKE:public std::enable_shared_from_this<snake> {
         void cut(int x,int y) {
             auto tmp=head;
             int cnt=0;
-            while(tmp->getData()!=node(x,y)) {
+            while(tmp->getData()!=(std::pair<int,int>){x,y}) {
                 tmp=tmp->getNxt();
                 ++cnt;
             }
@@ -87,6 +95,8 @@ class SNAKE:public std::enable_shared_from_this<snake> {
             tail->setNxt(head);
             size=cnt;
             while(tmp!=head) {
+                snakePlace.erase(tmp->getData());
+                nullPlace.insert(tmp->getData());
                 auto temp=tmp->getNxt();
                 tmp->setNxt(nullptr);
                 tmp->setPre(nullptr);
@@ -109,3 +119,5 @@ int check(int,int);
 void begin();
 void about();
 void main_loop();
+void createFood();
+void gameOver();

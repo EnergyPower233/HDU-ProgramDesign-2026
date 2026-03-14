@@ -2,6 +2,7 @@
 #include <random>
 #include<map>
 SNAKE s;
+int score;
 std::set<std::pair<int,int>> foodPlace;
 std::mt19937 rnd(time(nullptr));
 char nowDir;
@@ -18,12 +19,12 @@ void begin() {
             if(c=='w'||c=='a'||c=='s'||c=='d')
                 nowDir=c,print();
         }
-        auto [x,y]=s.getHead()->getData().getData();
+        auto [x,y]=s.getHead()->getData();
         auto [dx,dy]=mp[nowDir];
         x+=dx,y+=dy;
         switch(check(x,y)) {
             case 0:
-                GameOver();
+                gameOver();
                 break;
             case 1:
                 s.moveSnake(x,y);
@@ -31,10 +32,18 @@ void begin() {
             case 2:
                 s.cut(x,y);
                 break;
-            case 4:
+            case 3:
+                ++score;
                 s.getFood(FOOD(x,y));
+                createFood();
                 break;
         }
         print();
     }
+}
+int check(int x,int y) {
+    if(s.snakePlace.find({x,y})!=s.snakePlace.end()) return 2;
+    if(foodPlace.find({x,y})!=foodPlace.end()) return 3;
+    if(x<0||y<0||x>=MAX_HEIGHT||y>=MAX_WIDTH) return 0;
+    return 1;
 }
