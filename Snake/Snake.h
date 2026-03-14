@@ -117,6 +117,9 @@ class SNAKE:public std::enable_shared_from_this<snake> {
             while(tmp!=head) {
                 snakePlace.erase(tmp->getData());
                 nullPlace.insert(tmp->getData());
+                auto [tx,ty]=head->getData();
+                GotoXY(tx,ty);
+                printf(" ");
                 auto temp=tmp->getNxt();
                 tmp->setNxt(nullptr);
                 tmp->setPre(nullptr);
@@ -140,3 +143,4 @@ void gameOver();
 void Hide();
 void help();
 void about();
+void printBlank();
