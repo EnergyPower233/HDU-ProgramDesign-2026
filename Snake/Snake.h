@@ -105,3 +105,4 @@ void print();
 int check();
 void begin();
 void about();
+void main_loop();
