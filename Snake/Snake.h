@@ -119,3 +119,5 @@ int check(int,int);
 void begin();
 void about();
 void main_loop();
+void createFood();
+void gameOver();

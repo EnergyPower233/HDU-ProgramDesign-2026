@@ -156,6 +156,7 @@ void main_loop() {
   }
 }
 
+extern int score;
 extern SNAKE s;
 extern std::set<std::pair<int, int>> foodPlace;
 extern std::mt19937 rnd;
