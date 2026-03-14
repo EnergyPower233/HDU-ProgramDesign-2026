@@ -29,6 +29,8 @@ extern void PrintBoader();
 // Initialization
 void init() {
   system("cls");
+  foodPlace.clear();
+
   Hide();
   s.clear();
   for (int i = 0; i < MAX_HEIGHT; ++i)
