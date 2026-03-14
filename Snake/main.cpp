@@ -14,7 +14,7 @@ void main_loop() {
       about();
       break;
     case 4:
-      exit(0);
+      return;
     }
   }
 }
