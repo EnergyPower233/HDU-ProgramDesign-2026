@@ -27,11 +27,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="54dc63e5-50e2-4c47-97c0-1497c332472f" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/copilot.data.migration.agent.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Initialization.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Initialization.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gameGenerate.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/gameGenerate.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +77,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.language.and.region",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -103,6 +99,8 @@
       <workItem from="1773515147838" duration="9000" />
       <workItem from="1773515598718" duration="343000" />
       <workItem from="1773515956880" duration="65000" />
+      <workItem from="1773516037960" duration="332000" />
+      <workItem from="1773516384831" duration="181000" />
     </task>
     <servers />
   </component>

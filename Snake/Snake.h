@@ -47,6 +47,21 @@ class SNAKE:public std::enable_shared_from_this<snake> {
         std::shared_ptr<snake> getHead()const{ return head; }
         std::shared_ptr<snake> getTail()const{ return tail; }
         int getSpeed()const{ return speed; }
+        void clear() {
+            size=0,speed=1000;
+            snakePlace.clear();
+            nullPlace.clear();
+            auto tmp=head->getNxt();
+            while(tmp!=head) {
+                auto temp=tmp->getNxt();
+                tmp->setNxt(nullptr);
+                tmp->setPre(nullptr);
+                tmp=temp;
+            }
+            head->setNxt(nullptr);
+            head->setPre(nullptr);
+            head=tail=nullptr;
+        }
         void setSpeed(int x){ speed=x; }
         void pushBack(int x,int y) {
             nullPlace.erase({x,y});
