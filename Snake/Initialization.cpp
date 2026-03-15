@@ -41,14 +41,16 @@ void init() {
   // Sleep(20000);
   s.clear();
   score = 0;
-  for (int i = 0; i < MAX_HEIGHT; ++i)
-    for (int j = 0; j < MAX_WIDTH; ++j)
+  for (int i = 1; i < MAX_HEIGHT-1; ++i)
+    for (int j = 1; j < MAX_WIDTH-1; ++j)
       s.nullPlace.insert({i, j});
 
   // 在地图中间生成蛇头，并随机一个方向
   initializeSnake();
   // 随机生成食物
-  createFood();
-
+  //createFood();
+  auto [x,y]=s.getHead()->getData();
+  foodPlace.insert({x+1,y});
+  s.nullPlace.erase({x+1,y});
   print();
 }

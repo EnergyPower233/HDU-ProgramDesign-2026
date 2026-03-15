@@ -45,7 +45,7 @@ void begin() {
 int check(int x,int y) {
     if(s.snakePlace.find({x,y})!=s.snakePlace.end()) return 2;
     if(foodPlace.find({x,y})!=foodPlace.end()) return 3;
-    if(x<0||y<0||x>=MAX_HEIGHT||y>=MAX_WIDTH) return 0;
+    if(x<1||y<1||x>=MAX_HEIGHT-1||y>=MAX_WIDTH-1) return 0;
     return 1;
 }
 //1

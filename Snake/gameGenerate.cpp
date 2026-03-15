@@ -44,7 +44,7 @@ void PrintBoader() {
     GotoXY(i, MAX_HEIGHT - 1);
     printf("-");
   }
-  for (int i = 1; i < MAX_HEIGHT - 1; i++) {
+  for (int i = 1; i < MAX_HEIGHT; i++) {
     GotoXY(0, i);
     printf("|");
     GotoXY(MAX_WIDTH - 1, i);
