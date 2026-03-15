@@ -1,0 +1,32 @@
+[
+{
+  "directory": "C:/Users/16777/Desktop/rubbish/HDU-ProgramDesign-2026/Snake/build",
+  "command": "D:\\cpeditor\\mingw64\\bin\\g++.exe  @CMakeFiles/Snake.dir/includes_CXX.rsp -g -std=gnu++14 -o CMakeFiles\\Snake.dir\\gameGenerate.cpp.obj -c C:\\Users\\16777\\Desktop\\rubbish\\HDU-ProgramDesign-2026\\Snake\\gameGenerate.cpp",
+  "file": "C:/Users/16777/Desktop/rubbish/HDU-ProgramDesign-2026/Snake/gameGenerate.cpp",
+  "output": "CMakeFiles/Snake.dir/gameGenerate.cpp.obj"
+},
+{
+  "directory": "C:/Users/16777/Desktop/rubbish/HDU-ProgramDesign-2026/Snake/build",
+  "command": "D:\\cpeditor\\mingw64\\bin\\g++.exe  @CMakeFiles/Snake.dir/includes_CXX.rsp -g -std=gnu++14 -o CMakeFiles\\Snake.dir\\gameStart.cpp.obj -c C:\\Users\\16777\\Desktop\\rubbish\\HDU-ProgramDesign-2026\\Snake\\gameStart.cpp",
+  "file": "C:/Users/16777/Desktop/rubbish/HDU-ProgramDesign-2026/Snake/gameStart.cpp",
+  "output": "CMakeFiles/Snake.dir/gameStart.cpp.obj"
+},
+{
+  "directory": "C:/Users/16777/Desktop/rubbish/HDU-ProgramDesign-2026/Snake/build",
+  "command": "D:\\cpeditor\\mingw64\\bin\\g++.exe  @CMakeFiles/Snake.dir/includes_CXX.rsp -g -std=gnu++14 -o CMakeFiles\\Snake.dir\\Initialization.cpp.obj -c C:\\Users\\16777\\Desktop\\rubbish\\HDU-ProgramDesign-2026\\Snake\\Initialization.cpp",
+  "file": "C:/Users/16777/Desktop/rubbish/HDU-ProgramDesign-2026/Snake/Initialization.cpp",
+  "output": "CMakeFiles/Snake.dir/Initialization.cpp.obj"
+},
+{
+  "directory": "C:/Users/16777/Desktop/rubbish/HDU-ProgramDesign-2026/Snake/build",
+  "command": "D:\\cpeditor\\mingw64\\bin\\g++.exe  @CMakeFiles/Snake.dir/includes_CXX.rsp -g -std=gnu++14 -o CMakeFiles\\Snake.dir\\main.cpp.obj -c C:\\Users\\16777\\Desktop\\rubbish\\HDU-ProgramDesign-2026\\Snake\\main.cpp",
+  "file": "C:/Users/16777/Desktop/rubbish/HDU-ProgramDesign-2026/Snake/main.cpp",
+  "output": "CMakeFiles/Snake.dir/main.cpp.obj"
+},
+{
+  "directory": "C:/Users/16777/Desktop/rubbish/HDU-ProgramDesign-2026/Snake/build",
+  "command": "D:\\cpeditor\\mingw64\\bin\\g++.exe  @CMakeFiles/Snake.dir/includes_CXX.rsp -g -std=gnu++14 -o CMakeFiles\\Snake.dir\\UI.cpp.obj -c C:\\Users\\16777\\Desktop\\rubbish\\HDU-ProgramDesign-2026\\Snake\\UI.cpp",
+  "file": "C:/Users/16777/Desktop/rubbish/HDU-ProgramDesign-2026/Snake/UI.cpp",
+  "output": "CMakeFiles/Snake.dir/UI.cpp.obj"
+}
+]

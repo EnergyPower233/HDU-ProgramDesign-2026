@@ -1,0 +1,3 @@
+C:/Users/16777/Desktop/rubbish/HDU-ProgramDesign-2026/Snake/build/CMakeFiles/Snake.dir
+C:/Users/16777/Desktop/rubbish/HDU-ProgramDesign-2026/Snake/build/CMakeFiles/edit_cache.dir
+C:/Users/16777/Desktop/rubbish/HDU-ProgramDesign-2026/Snake/build/CMakeFiles/rebuild_cache.dir

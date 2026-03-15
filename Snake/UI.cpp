@@ -135,7 +135,8 @@ void about() {
   char ch = _getch();
   system("cls");
 }
-
+extern std::multiset<int> ScoreList;
+extern int score;
 void gameOver() {
   system("cls");
   GotoXY(30, 12);
@@ -145,7 +146,8 @@ void gameOver() {
   GotoXY(43, 16);
   printf("Press any key to return");
   Hide();
-
+    ScoreList.insert(score);
+    while(ScoreList.size()>3) ScoreList.erase(ScoreList.begin());
   char ch = _getch();
   system("cls");
 }
