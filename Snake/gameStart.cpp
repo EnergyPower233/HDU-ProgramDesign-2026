@@ -3,7 +3,7 @@
 #include<map>
 SNAKE s;
 int score,foodType;
-std::set<std::pair<int,int>> foodPlace;
+std::set<std::pair<int,int>> foodPlace,barrierPlace;
 std::mt19937 rnd(time(nullptr));
 char nowDir;
 std::map<char,std::pair<int,int>> mp;
@@ -48,7 +48,7 @@ void begin() {
 int check(int x,int y) {
     if(s.snakePlace.find({x,y})!=s.snakePlace.end()) return 2;
     if(foodPlace.find({x,y})!=foodPlace.end()) return 3;
-    if(x<1||y<1||x>=MAX_WIDTH-1||y>=MAX_HEIGHT-1) return 0;
+    if(x<1||y<1||x>=MAX_WIDTH-1||y>=MAX_HEIGHT-1||barrierPlace.find({x,y})!=barrierPlace.end()) return 0;
     return 1;
 }
 //1

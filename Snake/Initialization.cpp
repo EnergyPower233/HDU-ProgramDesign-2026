@@ -1,7 +1,7 @@
 #include "Snake.h"
 #include <cassert>
 extern SNAKE s;
-extern std::set<std::pair<int, int>> foodPlace;
+extern std::set<std::pair<int, int>> foodPlace,barrierPlace;
 extern std::mt19937 rnd;
 extern char nowDir;
 extern int score,foodType;
