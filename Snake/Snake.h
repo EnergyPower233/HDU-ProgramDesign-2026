@@ -44,12 +44,12 @@ class SNAKE:public std::enable_shared_from_this<snake> {
         int size,speed;
     public:
         std::set<std::pair<int,int>> snakePlace,nullPlace;
-        SNAKE():size(0),speed(1000),head(nullptr),tail(nullptr){}
+        SNAKE():size(0),speed(600),head(nullptr),tail(nullptr){}
         std::shared_ptr<snake> getHead()const{ return head; }
         std::shared_ptr<snake> getTail()const{ return tail; }
         int getSpeed()const{ return speed; }
         void clear() {
-            size=0,speed=1000;
+            size=0,speed=600;
             snakePlace.clear();
             nullPlace.clear();
             if (!head) return;
@@ -117,7 +117,7 @@ class SNAKE:public std::enable_shared_from_this<snake> {
             while(tmp!=head) {
                 snakePlace.erase(tmp->getData());
                 nullPlace.insert(tmp->getData());
-                auto [tx,ty]=head->getData();
+                auto [tx,ty]=tmp->getData();
                 GotoXY(tx,ty);
                 printf(" ");
                 auto temp=tmp->getNxt();

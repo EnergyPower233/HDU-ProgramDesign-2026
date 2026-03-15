@@ -3,7 +3,8 @@ extern SNAKE s;
 extern std::set<std::pair<int, int>> foodPlace;
 extern std::mt19937 rnd;
 extern char nowDir;
-extern int score;
+extern int score,foodType;
+std::multiset<int> ScoreList;
 
 void PrintSnake() {
   auto head = s.getHead()->getData();
@@ -33,7 +34,9 @@ void PrintSnake() {
 void PrintFood() {
   for (auto [x, y] : foodPlace) {
     GotoXY(x, y);
-    printf("*");
+    if(foodType==0) printf("*");
+    if(foodType==1) printf("0");
+    if(foodType==2) printf("@");
   }
 }
 
@@ -44,14 +47,13 @@ void PrintBoader() {
     GotoXY(i, MAX_HEIGHT - 1);
     printf("-");
   }
-  for (int i = 1; i < MAX_HEIGHT - 1; i++) {
+  for (int i = 1; i < MAX_HEIGHT; i++) {
     GotoXY(0, i);
     printf("|");
     GotoXY(MAX_WIDTH - 1, i);
     printf("|");
   }
-  GotoXY(50, 5);
-  printf("Score: %d",score);
+
 }
 void printBlank() {
   for (int i = 0; i < MAX_HEIGHT; ++i)
@@ -63,7 +65,15 @@ void printBlank() {
 
 }
 void print() {
-    PrintBoader();
     PrintSnake();
     PrintFood();
+    GotoXY(50, 5);
+    printf("Score: %d",score);
+    GotoXY(50, 6);
+    printf("Score List:");
+    int tmp=6+ScoreList.size();
+    for(auto x:ScoreList) {
+        GotoXY(50,tmp--);
+        printf("%d. %d",tmp-5,x);
+    }
 }

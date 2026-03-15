@@ -1,13 +1,16 @@
 #include "Snake.h"
+#include <cassert>
 extern SNAKE s;
 extern std::set<std::pair<int, int>> foodPlace;
 extern std::mt19937 rnd;
 extern char nowDir;
-extern int score;
+extern int score,foodType;
 
 void createFood() {
+    foodType=rnd()%3;
   int cnt = rnd() % s.nullPlace.size();
   auto tmp = s.nullPlace.begin();
+  assert(cnt<s.nullPlace.size());
   while (cnt) {
     ++tmp;
     --cnt;
@@ -18,7 +21,7 @@ void createFood() {
 }
 
 static void initializeSnake() {
-  s.pushBack(MAX_HEIGHT / 2, MAX_WIDTH / 2);
+  s.pushBack(MAX_WIDTH / 2, MAX_HEIGHT / 2);
   int tmp = rnd() % 4;
   if (tmp == 0)
     nowDir = 'w';
@@ -41,10 +44,10 @@ void init() {
   // Sleep(20000);
   s.clear();
   score = 0;
-  for (int i = 0; i < MAX_HEIGHT; ++i)
-    for (int j = 0; j < MAX_WIDTH; ++j)
+  for (int i = 1; i < MAX_WIDTH-1; ++i)
+    for (int j = 1; j < MAX_HEIGHT-1; ++j)
       s.nullPlace.insert({i, j});
-
+    PrintBoader();
   // 在地图中间生成蛇头，并随机一个方向
   initializeSnake();
   // 随机生成食物
