@@ -146,8 +146,9 @@ void gameOver() {
   GotoXY(43, 16);
   printf("Press any key to return");
   Hide();
-    ScoreList.insert(score);
-    while(ScoreList.size()>3) ScoreList.erase(ScoreList.begin());
+  ScoreList.insert(score);
+  while (ScoreList.size() > 3)
+    ScoreList.erase(ScoreList.begin());
   char ch = _getch();
   system("cls");
 }
