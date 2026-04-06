@@ -1,0 +1,1 @@
+/usr/bin/ccache  gcc -g -Wl,--dependency-file=CMakeFiles/StudentsManager.dir/link.d CMakeFiles/StudentsManager.dir/file.c.o CMakeFiles/StudentsManager.dir/main.c.o CMakeFiles/StudentsManager.dir/menu.c.o CMakeFiles/StudentsManager.dir/student.c.o CMakeFiles/StudentsManager.dir/utils.c.o -o StudentsManager

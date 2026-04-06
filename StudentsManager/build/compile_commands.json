@@ -1,0 +1,32 @@
+[
+{
+  "directory": "/home/epower/Desktop/StudentsManager/build",
+  "command": "/usr/bin/ccache  gcc   -g -o CMakeFiles/StudentsManager.dir/file.c.o -c /home/epower/Desktop/StudentsManager/file.c",
+  "file": "/home/epower/Desktop/StudentsManager/file.c",
+  "output": "CMakeFiles/StudentsManager.dir/file.c.o"
+},
+{
+  "directory": "/home/epower/Desktop/StudentsManager/build",
+  "command": "/usr/bin/ccache  gcc   -g -o CMakeFiles/StudentsManager.dir/main.c.o -c /home/epower/Desktop/StudentsManager/main.c",
+  "file": "/home/epower/Desktop/StudentsManager/main.c",
+  "output": "CMakeFiles/StudentsManager.dir/main.c.o"
+},
+{
+  "directory": "/home/epower/Desktop/StudentsManager/build",
+  "command": "/usr/bin/ccache  gcc   -g -o CMakeFiles/StudentsManager.dir/menu.c.o -c /home/epower/Desktop/StudentsManager/menu.c",
+  "file": "/home/epower/Desktop/StudentsManager/menu.c",
+  "output": "CMakeFiles/StudentsManager.dir/menu.c.o"
+},
+{
+  "directory": "/home/epower/Desktop/StudentsManager/build",
+  "command": "/usr/bin/ccache  gcc   -g -o CMakeFiles/StudentsManager.dir/student.c.o -c /home/epower/Desktop/StudentsManager/student.c",
+  "file": "/home/epower/Desktop/StudentsManager/student.c",
+  "output": "CMakeFiles/StudentsManager.dir/student.c.o"
+},
+{
+  "directory": "/home/epower/Desktop/StudentsManager/build",
+  "command": "/usr/bin/ccache  gcc   -g -o CMakeFiles/StudentsManager.dir/utils.c.o -c /home/epower/Desktop/StudentsManager/utils.c",
+  "file": "/home/epower/Desktop/StudentsManager/utils.c",
+  "output": "CMakeFiles/StudentsManager.dir/utils.c.o"
+}
+]

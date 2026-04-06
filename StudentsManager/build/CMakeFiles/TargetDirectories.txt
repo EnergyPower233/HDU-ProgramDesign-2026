@@ -1,0 +1,3 @@
+/home/epower/Desktop/StudentsManager/build/CMakeFiles/StudentsManager.dir
+/home/epower/Desktop/StudentsManager/build/CMakeFiles/edit_cache.dir
+/home/epower/Desktop/StudentsManager/build/CMakeFiles/rebuild_cache.dir
