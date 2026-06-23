@@ -1,0 +1,6 @@
+.DS_Store
+build/
+factory_tool_system
+*.o
+*.dat
+statistics.txt
